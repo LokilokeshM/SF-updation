@@ -1,0 +1,131 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "SFM": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/sfm",
+      "sourceRoot": "projects/sfm/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/SFM",
+            "index": "projects/sfm/src/index.html",
+            "main": "projects/sfm/src/main.ts",
+            "polyfills": "projects/sfm/src/polyfills.ts",
+            "tsConfig": "projects/sfm/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/sfm/src/favicon.ico",
+              "projects/sfm/src/assets"
+            ],
+            "styles": [
+              "projects/sfm/src/styles.css"
+            ],
+            "scripts": [
+            "projects/sfm/src/assets/js/core/popper.min.js",
+            "projects/sfm/src/assets/js/core/bootstrap.min.js",
+            "projects/sfm/src/assets/js/plugins/smooth-scrollbar.min.js",
+            "projects/sfm/src/assets/js/soft-ui-dashboard.min.js",
+            "projects/sfm/src/assets/js/plugins/chartjs.min.js",
+            "projects/sfm/src/assets/js/plugins/Chart.extension.js"
+          ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sfm/src/environments/environment.ts",
+                  "with": "projects/sfm/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "SFM:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "SFM:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "SFM:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sfm/src/test.ts",
+            "polyfills": "projects/sfm/src/polyfills.ts",
+            "tsConfig": "projects/sfm/tsconfig.spec.json",
+            "karmaConfig": "projects/sfm/karma.conf.js",
+            "assets": [
+              "projects/sfm/src/favicon.ico",
+              "projects/sfm/src/assets"
+            ],
+            "styles": [
+              "projects/sfm/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sfm/tsconfig.app.json",
+              "projects/sfm/tsconfig.spec.json",
+              "projects/sfm/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/sfm/e2e/protractor.conf.js",
+            "devServerTarget": "SFM:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "SFM:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "SFM"
+}
