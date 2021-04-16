@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './Common/Components/page-not-found/page-n
 import { LoginComponent } from './Common/Components/login/login.component';
 import { LogoutComponent } from './Common/Components/logout/logout.component';
 import { AuthGuardService } from './guard/auth.gaurd';
-
+import { DemoMaterialModule } from './Common/material.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { AuthGuardService } from './guard/auth.gaurd';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DemoMaterialModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

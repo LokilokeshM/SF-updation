@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
@@ -11,7 +11,10 @@ import { VendorDetailsComponent } from './Components/vendor-details/vendor-detai
 import { PaymentReportsComponent } from './Components/payment-reports/payment-reports.component';
 import { ComplainReportsComponent } from './Components/complain-reports/complain-reports.component';
 import { DefaultLayoutComponent } from './Components/default-layout/default-layout.component';
-
+import { AddEventsComponent } from './Components/add-events/add-events.component';
+import { EventHistoryComponent } from './Components/event-history/event-history.component';
+import { DemoMaterialModule } from '../Common/material.module';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -23,10 +26,14 @@ import { DefaultLayoutComponent } from './Components/default-layout/default-layo
     PaymentReportsComponent,
     ComplainReportsComponent,
     DefaultLayoutComponent,
+    AddEventsComponent,
+    EventHistoryComponent,
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    DemoMaterialModule,
+    TabsModule.forRoot(),
   ]
 })
 export class AdminModule { }

@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Common/Components/login/login.component';
+import { LogoutComponent } from './Common/Components/logout/logout.component';
 import { PageNotFoundComponent } from './Common/Components/page-not-found/page-not-found.component';
 import { AuthGuardService } from './guard/auth.gaurd';
 
@@ -20,8 +21,12 @@ const routes: Routes = [
     canActivate : [AuthGuardService]
   },
   {
+    path:'logout',
+    component:LogoutComponent
+  },
+  {
     path:'',
-    redirectTo:'/Login',
+    redirectTo:'',
     pathMatch:'full'
   },
   {

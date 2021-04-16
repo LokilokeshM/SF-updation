@@ -9,6 +9,7 @@ import { ComplainStatusComponent } from './Components/complain-status/complain-s
 import { ViewProfileComponent } from './Components/view-profile/view-profile.component';
 import { ViewEventComponent } from './Components/view-event/view-event.component';
 import { PaymentDetailsComponent } from './Components/payment-details/payment-details.component';
+import { DemoMaterialModule } from '../Common/material.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PaymentDetailsComponent } from './Components/payment-details/payment-de
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    DemoMaterialModule
   ]
 })
 export class UserModule { }

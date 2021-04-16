@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ComplainRequestComponent } from '../User/Components/complain-request/complain-request.component';
-import { PaymentDetailsComponent } from '../User/Components/payment-details/payment-details.component';
+import { ComplainRequestComponent } from './Components/complain-request/complain-request.component';
+import { AddEventsComponent } from './Components/add-events/add-events.component';
 import { ComplainReportsComponent } from './Components/complain-reports/complain-reports.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { DefaultLayoutComponent } from './Components/default-layout/default-layout.component';
+import { EventHistoryComponent } from './Components/event-history/event-history.component';
 import { OnBoardingComponent } from './Components/on-boarding/on-boarding.component';
 import { OwnerDetailsComponent } from './Components/owner-details/owner-details.component';
 import { VendorDetailsComponent } from './Components/vendor-details/vendor-details.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 const routes: Routes = [{
   path: '',
@@ -35,7 +37,7 @@ const routes: Routes = [{
     },
     {
       path:'PaymentDetails',
-      component:PaymentDetailsComponent
+      component:PaymentComponent
     },
     {
       path:'VendorDetails',
@@ -43,11 +45,11 @@ const routes: Routes = [{
     },
     {
       path:'AddEvent',
-      component:VendorDetailsComponent
+      component:AddEventsComponent
     },
     {
       path:'EventHistory',
-      component:VendorDetailsComponent
+      component:EventHistoryComponent
     }
   ]
  }];
