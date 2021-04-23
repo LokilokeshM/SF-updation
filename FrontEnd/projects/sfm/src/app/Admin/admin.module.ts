@@ -15,6 +15,10 @@ import { AddEventsComponent } from './Components/add-events/add-events.component
 import { EventHistoryComponent } from './Components/event-history/event-history.component';
 import { DemoMaterialModule } from '../Common/material.module';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { AddVendorComponent } from './Components/add-vendor/add-vendor.component';
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -28,12 +32,14 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     DefaultLayoutComponent,
     AddEventsComponent,
     EventHistoryComponent,
+    AddVendorComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     DemoMaterialModule,
     TabsModule.forRoot(),
+    HttpClientModule
   ]
 })
 export class AdminModule { }

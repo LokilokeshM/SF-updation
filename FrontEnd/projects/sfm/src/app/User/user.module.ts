@@ -10,6 +10,7 @@ import { ViewProfileComponent } from './Components/view-profile/view-profile.com
 import { ViewEventComponent } from './Components/view-event/view-event.component';
 import { PaymentDetailsComponent } from './Components/payment-details/payment-details.component';
 import { DemoMaterialModule } from '../Common/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DemoMaterialModule } from '../Common/material.module';
   imports: [
     CommonModule,
     UserRoutingModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }

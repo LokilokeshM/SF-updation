@@ -8,6 +8,8 @@ import { LoginComponent } from './Common/Components/login/login.component';
 import { LogoutComponent } from './Common/Components/logout/logout.component';
 import { AuthGuardService } from './guard/auth.gaurd';
 import { DemoMaterialModule } from './Common/material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DemoMaterialModule } from './Common/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

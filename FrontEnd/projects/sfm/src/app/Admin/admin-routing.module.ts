@@ -10,6 +10,7 @@ import { OnBoardingComponent } from './Components/on-boarding/on-boarding.compon
 import { OwnerDetailsComponent } from './Components/owner-details/owner-details.component';
 import { VendorDetailsComponent } from './Components/vendor-details/vendor-details.component';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { AddVendorComponent } from './Components/add-vendor/add-vendor.component';
 
 const routes: Routes = [{
   path: '',
@@ -50,6 +51,10 @@ const routes: Routes = [{
     {
       path:'EventHistory',
       component:EventHistoryComponent
+    },
+    {
+      path:'AddVendor',
+      component:AddVendorComponent
     }
   ]
  }];

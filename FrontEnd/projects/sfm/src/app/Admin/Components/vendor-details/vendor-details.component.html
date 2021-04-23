@@ -26,14 +26,14 @@
                     <th>Edit</th>
                 </thead>
                 <tbody style="text-align: center;">
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let v of vendor;let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{v.vendorName}}</td>
+                        <td>{{v.email}}</td>
+                        <td>{{v.phoneNumber}}</td>
+                        <td>{{v.companyName}}</td>
+                        <td *ngFor="let ca of v.companyAddrress;"> {{ca.doorno}},{{ca.streetName}},{{ ca.city }},{{ca.state }},{{ca.country }},{{ ca.pincode}}</td>
+                        <td>{{v.specification}}</td>
                         <td><button class="btn btn-info">View</button></td>
                         <td><button class="btn btn-success">Edit</button></td>
                     </tr>
@@ -44,6 +44,4 @@
             </table>
         </div>
     </div>
-    
-</div>
 

@@ -14,38 +14,128 @@
                     <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
                 </div>
             </div>          
-            <table class="table table-responsive">
+            <table class="table table-borderless">
                 <thead>
                     <th>S.No</th>
-                    <th>Customer Name</th>
-                    <th>Block Number</th>
-                    <th>House Number</th>
                     <th>Complain Message</th>
                     <th>Date</th>
-                    <th>Accept</th>
-                    <th>Pending</th>
-                    <th>Reject</th>
+                    <th>View</th>
                 </thead>
-                <tbody style="text-align: center;">
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button class="btn btn-success">Accept</button></td>
-                        <td><button class="btn btn-info">Pending</button></td>
-                        <td><button class="btn btn-danger">Reject</button></td>
+                <tbody>
+                    <tr *ngFor="let c of complaint;let i= index">
+                        <td>{{i+1}}</td>
+                        <td>{{c.message}}</td>
+                        <td>{{c.date}}</td>
+                        <td><button class="btn btn-success" (click)="view(c.custid)" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button></td>
                     </tr>
-                    <tr>
+                    <tr >
                         <td colspan="10" align="center">No data available in table</td>
-                    </tr>
-                    
+                    </tr>                    
                 </tbody>
                
             </table>
         </div>
+    </div> 
+  <!-- Modal -->
+  <td><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button></td>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12" >
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="form-lable">Customer Name</label>
+                                </div>
+                                <div class="col-md-4">
+                                    :
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-lable" >{{Customer.firstname +  " " + Customer.lastname}}</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="form-lable">House NO</label>
+                                </div>
+                                <div class="col-md-4">
+                                    :
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-lable">{{Customer.houseid[0].houseNo}}</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="form-lable">Block No</label>
+                                </div>
+                                <div class="col-md-4">
+                                    :
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-lable">{{Customer.houseid[0].blockNo}}</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="form-lable">Email</label>
+                                </div>
+                                <div class="col-md-4">
+                                    :
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-lable">{{Customer.email}}</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="form-lable">Phone Number</label>
+                                </div>
+                                <div class="col-md-4">
+                                    :
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-lable">{{Customer.phonenumber}}</label>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer justify-content-center p-3" >
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="btn btn-primary" (click)="status(1, 'accepted')" data-bs-dismiss="modal">Accept</button>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-secondary" (click)="status(1, 'pending')" data-bs-dismiss="modal">Pending</button>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-danger" (click)="status(1, 'rejected')" data-bs-dismiss="modal">Reject</button>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
-    
+  </div>
 </div>
+
+<!--
+<table>
+<tr>
+    <th>Composant</th> 
+    <th>Nom</th>
+</tr>
+    <template *ngFor="let item of array">
+    <template *ngFor="let composant of item.composants">
+     <tr> <td>{{item.nom}}</td> <td>{{composant|json}}</td> 
+    </tr>
+</template> 
+</template> 
+</table> -->

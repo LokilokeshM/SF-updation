@@ -4,8 +4,12 @@
 
 export const environment = {
   production: false
+  
 };
+export const apiURLAdmin: string = "http://localhost:8080/api/admin/";
+export const apiURLUser: string = "http://localhost:8080/api/user/";
 
+  
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

@@ -7,7 +7,7 @@ import { AuthGuardService } from './guard/auth.gaurd';
 
 const routes: Routes = [ 
   {
-    path:'',
+    path:'login',
     component:LoginComponent,
   },
   {   
@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo:'',
+    redirectTo:'/login',
     pathMatch:'full'
   },
   {
