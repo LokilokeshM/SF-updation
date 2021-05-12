@@ -11,6 +11,7 @@ import { OwnerDetailsComponent } from './Components/owner-details/owner-details.
 import { VendorDetailsComponent } from './Components/vendor-details/vendor-details.component';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { AddVendorComponent } from './Components/add-vendor/add-vendor.component';
+import { PaymentReportsComponent } from './Components/payment-reports/payment-reports.component';
 
 const routes: Routes = [{
   path: '',
@@ -39,6 +40,10 @@ const routes: Routes = [{
     {
       path:'PaymentDetails',
       component:PaymentComponent
+    },
+    {
+      path:'PaymentReport',
+      component:PaymentReportsComponent
     },
     {
       path:'VendorDetails',

@@ -15,4 +15,14 @@ export class VendorService {
   {
     return this.http.get<Vendor[]>(GlobalConstants.apiURLAdmin + "vendor/all");
   }
+
+  public addVendorDetails(v:Vendor):Observable<Vendor>
+  {
+    return this.http.post<Vendor>(GlobalConstants.apiURLAdmin + "vendor/save",v);
+  }
+
+  public getVendorById(id:any):Observable<Vendor>
+  {
+    return this.http.get<Vendor>(GlobalConstants.apiURLAdmin + "vendor/"+id);
+  }
 }

@@ -3,6 +3,8 @@ package com.java.srm.SocietyFinancialManagement.ApiController.Admin;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.constraints.Positive;
+
 import com.java.srm.SocietyFinancialManagement.Entity.ComplainReport;
 import com.java.srm.SocietyFinancialManagement.Entity.Complaint;
 import com.java.srm.SocietyFinancialManagement.Services.Interface.ComplaintReportService;
@@ -14,6 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,15 +40,16 @@ public class ComplaintController {
         return new ResponseEntity<Optional<Complaint>>(compl,HttpStatus.OK);     
     }
 
-    // @GetMapping(value = "/all")
-    // private ResponseEntity<List<ComplainReport>> getcomplaintReport()
-    // {
-    //     return new ResponseEntity<List<ComplainReport>>(cservice.findAll(),HttpStatus.OK);
-    // }
     @GetMapping(value = "/all")
     private ResponseEntity<List<Complaint>> getcomplaintReport()
     {
         return new ResponseEntity<List<Complaint>>(service.findAll(),HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/save")
+    private ResponseEntity<Complaint> saveComplaint(@RequestBody Complaint c)
+    {
+        return new ResponseEntity<Complaint>(service.save(c),HttpStatus.OK);
     }
 
 }

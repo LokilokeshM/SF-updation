@@ -22,6 +22,7 @@
                     <th>View</th>
                 </thead>
                 <tbody>
+                 
                     <tr *ngFor="let c of complaint;let i= index">
                         <td>{{i+1}}</td>
                         <td>{{c.message}}</td>
@@ -40,7 +41,7 @@
   <td><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button></td>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-body">
             <div class="card">

@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import { Complaint } from '../../../Common/Model/complaint';
 import { Customer } from '../../../Common/Model/customer';
 import { HouseDetails } from '../../../Common/Model/house-details';
-import Status from '../../Model/status';
 import { ComplaintService } from '../../Service/complaint.service';
 import { CustomerService } from '../../Service/customer.service';
 declare var $:any;
@@ -18,12 +17,6 @@ export class ComplainRequestComponent implements OnInit , AfterViewInit{
 
   Customer:any;
   mess:number = 0;
-  name:string ="";
-  email:string ="";
-  phonenumber:number =0;
-  houseid:HouseDetails[] =[];
-  blockNo:string="";
-  houseNo:string="";
   @ViewChild('dataTable',{static:false}) table: any;
    
   complaint:Complaint[] =[];
@@ -56,6 +49,11 @@ export class ComplainRequestComponent implements OnInit , AfterViewInit{
   }
   status(id:number,st:string)
   {
+    let s:any = {
+      "id":id,
+      "st":st
+    }
+    this.complaintService.setStatus(id,st).subscribe((data)=>console.log("sdfa"))
     Swal.fire("Your Change successfully","","success")
   }
 }

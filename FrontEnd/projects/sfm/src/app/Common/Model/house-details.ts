@@ -5,11 +5,11 @@ export class HouseDetails {
     
     public houseNo:string="";
 
-    public city:string="";
+    public city:string="Chennai";
 
-    public state:string="";
+    public state:string="TamilName";
 
-    public country:string="";
+    public country:string="India";
 
-    public pincode:number = 0;
+    public pincode:number = 600099;
 }

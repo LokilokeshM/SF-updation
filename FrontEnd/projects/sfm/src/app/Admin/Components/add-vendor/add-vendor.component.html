@@ -5,8 +5,22 @@
         </div>
     </div>
 <br>
+<form [formGroup]="addVendor" (ngSubmit)="onSubmit()">
     <div class="card">
         <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="text-center">
+                      <button type="submit" class="btn bg-gradient-dark w-25 my-4 mb-2" >Add</button>
+                    </div>
+                  </div>
+            </div>
             <tabset #staticTabs >
                 <tab heading="Personal Info">
                     <div class="container-fluid bg-white p-2">
@@ -69,7 +83,7 @@
                     </div>                  
                 </tab>
                 <tab heading="Address">
-                    <div class="container-fluid bg-white p-2">
+                    <div class="container-fluid bg-white p-2" formGroupName="companyAddrress">
                         <div class="row">
                           <div class="col-sm-4 form-group">
                             <label class="control-label">DoorNo</label>
@@ -110,4 +124,6 @@
             </tabset>      
         </div>
     </div>
+</form>
+    
 </div>

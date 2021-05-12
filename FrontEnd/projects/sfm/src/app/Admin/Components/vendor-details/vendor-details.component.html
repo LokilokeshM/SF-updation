@@ -23,10 +23,9 @@
                     <th>Address</th>                   
                     <th>Specification</th>
                     <th>View</th>
-                    <th>Edit</th>
                 </thead>
-                <tbody style="text-align: center;">
-                    <tr *ngFor="let v of vendor;let i=index">
+                <tbody style="text-align: center;">        
+                    <tr *ngFor="let v of vendors;let i=index">
                         <td>{{i+1}}</td>
                         <td>{{v.vendorName}}</td>
                         <td>{{v.email}}</td>
@@ -34,14 +33,93 @@
                         <td>{{v.companyName}}</td>
                         <td *ngFor="let ca of v.companyAddrress;"> {{ca.doorno}},{{ca.streetName}},{{ ca.city }},{{ca.state }},{{ca.country }},{{ ca.pincode}}</td>
                         <td>{{v.specification}}</td>
-                        <td><button class="btn btn-info">View</button></td>
-                        <td><button class="btn btn-success">Edit</button></td>
+                        <td><button class="btn btn-info" (click)="view(v.vendorId)" data-bs-toggle="modal" data-bs-target="#vendorModel">View</button></td>   
                     </tr>
                     <tr>
                         <td colspan="10" align="center">No data available in table</td>
-                    </tr>                    
+       
+
+                    </tr>     
+                    <button class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#vendorModel">View</button>
                 </tbody>              
             </table>
         </div>
+        <div class="modal fade" id="vendorModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    Vendor Name
+                                </div>
+                                <div class="col-lg-4">
+                                    : 
+                                </div>
+                                <div class="col-lg-4">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    Vendor Email
+                                </div>
+                                <div class="col-lg-4">
+                                    : 
+                                </div>
+                                <div class="col-lg-4">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    Vendor PhoneNumber
+                                </div>
+                                <div class="col-lg-4">
+                                    : 
+                                </div>
+                                <div class="col-lg-4">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    Vendor Company Name
+                                </div>
+                                <div class="col-lg-4">
+                                    : 
+                                </div>
+                                <div class="col-lg-4">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    Vendor Company Address
+                                </div>
+                                <div class="col-lg-4">
+                                    : 
+                                </div>
+                                <div class="col-lg-4">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <button class="btn btn-success" data-bs-dismiss="modal">Save</button>
+                      </div>
+                      <div class="col-md-4">
+                          <button class="btn btn-danger"  data-bs-dismiss="modal">Cancel</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 

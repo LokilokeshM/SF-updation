@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.java.srm.SocietyFinancialManagement.Entity.Customer;
+import com.java.srm.SocietyFinancialManagement.Model.Status;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -42,17 +44,17 @@ public class CustomerController {
     }
 
     @GetMapping(value="/{id}")
-    public ResponseEntity<Optional<Customer>> getCustomerById(@PathVariable Long id) {
-        
+    public ResponseEntity<Optional<Customer>> getCustomerById(@PathVariable Long id) {       
         Optional<Customer> cust = service.findById(id);
         return new ResponseEntity<Optional<Customer>>(cust,HttpStatus.OK);
     }
-    @GetMapping(value="/{id}{status}")
-    public ResponseEntity<Optional<Customer>> getCustomerById1(@PathVariable Long id ,String status) {
-        
-        Optional<Customer> cust = service.findById(id);
-        return new ResponseEntity<Optional<Customer>>(cust,HttpStatus.OK);
+
+    @PostMapping(value = "/status")
+    public ResponseEntity<Status> updateStatus(@RequestBody Status s) 
+    {   
+        return null;
     }
+
     //[ {
     //     "firstname": "lokesh",
     //     "lastname": "m",

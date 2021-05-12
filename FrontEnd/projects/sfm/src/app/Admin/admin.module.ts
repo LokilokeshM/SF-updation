@@ -18,6 +18,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AddVendorComponent } from './Components/add-vendor/add-vendor.component';
+import { AddComplaintReportComponent } from './Components/add-complaint-report/add-complaint-report.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,13 +35,16 @@ import { AddVendorComponent } from './Components/add-vendor/add-vendor.component
     AddEventsComponent,
     EventHistoryComponent,
     AddVendorComponent,
+    AddComplaintReportComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     DemoMaterialModule,
     TabsModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

@@ -13,6 +13,7 @@ export class CustomerService {
 
   public saveOnboardingCustomer(c:Customer):Observable<Customer>
   {
+    console.log(c);
     return this.http.post<Customer>(GlobalConstants.apiURLAdmin + "customer/save" ,c);
   }
   public getAllCustomer():Observable<Customer[]>

@@ -10,7 +10,7 @@ public interface ComplaintService {
     
     public Optional<Complaint> findById(Long id);
 
-    // public void getComplain();
-
     public List<Complaint> findAll();
+
+    public Complaint save(Complaint c);
 }

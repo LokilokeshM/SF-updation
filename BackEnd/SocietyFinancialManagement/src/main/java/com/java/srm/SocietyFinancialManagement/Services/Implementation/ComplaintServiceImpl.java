@@ -16,22 +16,19 @@ public class ComplaintServiceImpl implements ComplaintService{
     @Autowired
     private ComplaintRepo repo;
 
-
-    // @Override
-    // public void getComplain() {
-
-    // }
-
     @Override
-    public List<Complaint> findAll() {
-        
+    public List<Complaint> findAll() {   
         return repo.findAll();
     }
-
-
+    
     @Override
     public Optional<Complaint> findById(Long id) {
         return repo.findById(id);
     }
+
+	@Override
+	public Complaint save(Complaint c) {      
+        return repo.save(c);
+	}
     
 }

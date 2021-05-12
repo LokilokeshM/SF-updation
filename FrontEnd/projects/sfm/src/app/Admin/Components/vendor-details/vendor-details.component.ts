@@ -10,14 +10,23 @@ import { VendorService } from '../../Service/vendor.service';
 })
 export class VendorDetailsComponent implements OnInit {
 
-  vendor:Vendor[] =[];
+  vendors:Vendor[] =[];
+  vendor:any =[];
   constructor(private vendorService:VendorService) { }
 
   ngOnInit(): void {
     this.vendorService.getVendorDetails().subscribe((data) =>
-      this.vendor = data,
+      this.vendors = data,
     (error)=>Swal.fire("Error",error,"error")
     );
+  }
+  view(id:any)
+  {
+    this.vendorService.getVendorById(id).subscribe((data)=>{
+      this.vendor =data;
+    },(error)=>{
+      Swal.fire(error,"","error")
+    })
   }
 
 }

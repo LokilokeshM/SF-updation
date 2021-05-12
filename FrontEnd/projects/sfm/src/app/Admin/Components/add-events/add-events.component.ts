@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Form, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-events',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-events.component.css']
 })
 export class AddEventsComponent implements OnInit {
-
+  
+  addEvent:FormGroup = new FormGroup({});
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  add()
+  {
+
+  }
 }

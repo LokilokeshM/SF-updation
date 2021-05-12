@@ -15,9 +15,10 @@ public class VendorServiceImpl implements VendorService{
 
     @Autowired
     private VendorRepo repo;
+
     @Override
     public Vendor save(Vendor v) {
-        return null;
+        return repo.save(v);
     }
 
     @Override
@@ -27,7 +28,7 @@ public class VendorServiceImpl implements VendorService{
 
     @Override
     public Optional<Vendor> findById(Long id) {
-        return null;
+        return repo.findById(id);
     }
     
 }

@@ -4,8 +4,52 @@
             Add New Event
         </div>
     </div>
-
+    <br>
     <div class="card">
-        
+        <form [formGroup] ="addEvent" (ngSubmit)="add()">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-4 form-group">
+                        <label class="form-lable">
+                            Date of Month
+                        </label>
+                        <input class="form-control" id="" formControlName="" placeholder="Date of Month" type="date" value=""/>
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <button class="btn bg-gradient-dark" type="submit">Add</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 form-group">
+                        <label class="form-lable">
+                            Event Name
+                        </label>
+                        <input class="form-control" id="" formControlName="" placeholder="Event Name" type="text" value=""/>
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <label class="form-lable">
+                            Event Date
+                        </label>
+                        <input class="form-control" id="" formControlName="" placeholder="Event Date" type="date" value="" />
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <label class="form-lable">
+                            Event Amount
+                        </label>
+                        <input class="form-control" id="" formControlName="" placeholder="Event Amount" type="text" value="" />
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+
+        </div>
     </div>
 </div>
