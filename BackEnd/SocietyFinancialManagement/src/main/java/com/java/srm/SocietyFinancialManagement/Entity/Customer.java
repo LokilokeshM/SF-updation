@@ -13,8 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.dao.support.DaoSupport;
 
 @Entity
 public class Customer extends BaseEntity{
@@ -48,7 +51,9 @@ public class Customer extends BaseEntity{
     @JoinColumn(name = "customerId")
     private List<HouseDetails> houseid;
 
-	public Long getCustomerId() {
+   
+
+    public Long getCustomerId() {
 		return customerId;
 	}
 
