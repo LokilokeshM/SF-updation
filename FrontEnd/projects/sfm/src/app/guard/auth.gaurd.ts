@@ -11,7 +11,10 @@ export class AuthGuardService implements CanActivate {
  
     canActivate(route: ActivatedRouteSnapshot,
                 state: RouterStateSnapshot): boolean { 
-                    console.log("Auth is working")
-        return true;
+        // if(sessionStorage.getItem("token") != null)
+        // {
+            return true;
+        // }
+        
     }
 }

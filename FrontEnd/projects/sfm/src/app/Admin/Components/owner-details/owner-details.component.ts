@@ -14,8 +14,11 @@ export class OwnerDetailsComponent implements OnInit {
   constructor(private custservice:CustomerService) { }
 
   ngOnInit(): void {
-    this.custservice.getAllCustomer().subscribe((data) =>
-    this.customer = data,
+    this.custservice.getAllCustomer().subscribe((data) =>{
+      this.customer = data;
+      console.log(data);
+    }
+    ,
     (error)=>Swal.fire("Error",error,"error")
     )
   }
