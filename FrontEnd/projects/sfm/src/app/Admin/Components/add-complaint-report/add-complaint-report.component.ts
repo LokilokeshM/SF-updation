@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-add-complaint-report',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComplaintReportComponent implements OnInit {
 
-  constructor() { }
+  complaintForm = this.fb.group({
+    vendor: this.fb.array([
+      this.fb.control('')
+    ])
+  });
+
+  get aliases() {
+    return this.complaintForm.get('aliases') as FormArray;
+  }
+  addVendor() {
+    this.aliases.push(this.fb.control(''));
+  }
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }

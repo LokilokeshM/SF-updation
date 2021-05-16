@@ -13,5 +13,5 @@ public interface ComplaintReportService {
 
     public ComplainReport save(ComplainReport cr);
 
-    public List<ComplainReport> findByComplaintId(Long id);
+    public ComplainReport findByComplaintId(Long id);
 }

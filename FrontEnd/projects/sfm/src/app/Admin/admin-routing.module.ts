@@ -12,6 +12,7 @@ import { VendorDetailsComponent } from './Components/vendor-details/vendor-detai
 import { PaymentComponent } from './Components/payment/payment.component';
 import { AddVendorComponent } from './Components/add-vendor/add-vendor.component';
 import { PaymentReportsComponent } from './Components/payment-reports/payment-reports.component';
+import { AddComplaintReportComponent } from './Components/add-complaint-report/add-complaint-report.component';
 
 const routes: Routes = [{
   path: '',
@@ -60,6 +61,10 @@ const routes: Routes = [{
     {
       path:'AddVendor',
       component:AddVendorComponent
+    },
+    { 
+      path:'AddComplaintReport',
+      component:AddComplaintReportComponent     
     }
   ]
  }];

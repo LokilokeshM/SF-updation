@@ -32,13 +32,8 @@ public class ComplaintReportServiceImpl implements ComplaintReportService{
 	}
 
 	@Override
-	public List<ComplainReport> findByComplaintId(Long id) {
-        // List<ComplainReport> cust = repo.findAll();
-        // ComplainReport cr;
-        // if(cr.getComplaintId() == id){}
-
-		// return cust;
-        return null;
+	public ComplainReport findByComplaintId(Long id) {
+        return repo.findByComplaintId(id);
     }
 
     
