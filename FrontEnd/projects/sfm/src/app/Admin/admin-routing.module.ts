@@ -65,6 +65,9 @@ const routes: Routes = [{
     { 
       path:'AddComplaintReport',
       component:AddComplaintReportComponent     
+    },{
+      path:'Payment',
+      component:PaymentComponent
     }
   ]
  }];

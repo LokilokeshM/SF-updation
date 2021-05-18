@@ -11,6 +11,7 @@ import { CustomerService } from '../../Service/customer.service';
 export class OwnerDetailsComponent implements OnInit {
   customer:Customer[] = [];
   cust:any;
+  p:number=1;
   constructor(private custservice:CustomerService) { }
 
   ngOnInit(): void {

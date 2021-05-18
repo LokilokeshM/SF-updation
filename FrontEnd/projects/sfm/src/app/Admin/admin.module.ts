@@ -20,6 +20,7 @@ import { HttpModule } from '@angular/http';
 import { AddVendorComponent } from './Components/add-vendor/add-vendor.component';
 import { AddComplaintReportComponent } from './Components/add-complaint-report/add-complaint-report.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TabsModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class AdminModule { }

@@ -5,12 +5,17 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { retry, catchError,map } from 'rxjs/operators';
 import { Authresponse } from './authresponse';
 import { Rt } from './rt';
-
+function _window() : any {
+  return window;
+}
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  get nativeWindow() : any {
+    return _window();
+  }
   private refreshTokenTimeout:any;
 
   constructor(private httpc:HttpClient) { }

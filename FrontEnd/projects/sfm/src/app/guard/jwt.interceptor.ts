@@ -5,6 +5,8 @@ import {
   HttpEvent,
   HttpInterceptor,
   HttpErrorResponse,
+  HttpHeaders,
+  HttpClient,
 } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { retry, catchError, map, switchMap, filter, take } from 'rxjs/operators';
@@ -18,9 +20,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
   private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-  constructor(public authService: AuthService) {}
-
-
+  constructor(public authService: AuthService,private httpc:HttpClient) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (this.authService.getJwtToken()) {
@@ -90,26 +90,24 @@ export class JwtInterceptor implements HttpInterceptor {
   //   );
   // }
 
-  // private doRefreshToken(){
-  //   const token = sessionStorage.getItem("token");
+  private doRefreshToken(){
+    const token = sessionStorage.getItem("token");
+    const httpHeaders: HttpHeaders = new HttpHeaders({
+      'authorization': `Bearer ${token}`,
+      'isrefreshtoken': 'true',
+      //'No-Auth': 'True',
+      'Content-Type': 'application/json'
+    });
 
+    console.log("..#5...Heades" + JSON.stringify(httpHeaders));
+    this.httpc.get<Rt>("http://localhost:8080/refreshtoken" ,{headers:httpHeaders}).pipe(
+      map((res:Rt)=>{
+        //this.startRefreshTokenTimer();
+        return res;
+      })
+    ).subscribe((res:Rt)=>{
+      sessionStorage.setItem("token",res.token);
+    });
 
-  //   const httpHeaders: HttpHeaders = new HttpHeaders({
-  //     'authorization': `Bearer ${token}`,
-  //     'isrefreshtoken': 'true',
-  //     //'No-Auth': 'True',
-  //     'Content-Type': 'application/json'
-  //   });
-
-  //   console.log("..#5...Heades" + JSON.stringify(httpHeaders));
-  //   this.httpc.get<Rt>("http://localhost:8080/refreshtoken" ,{headers:httpHeaders}).pipe(
-  //     map((res:Rt)=>{
-  //       //this.startRefreshTokenTimer();
-  //       return res;
-  //     })
-  //   ).subscribe((res:Rt)=>{
-  //     sessionStorage.setItem("token",res.token);
-  //   });
-
-  // }
+  }
 }
