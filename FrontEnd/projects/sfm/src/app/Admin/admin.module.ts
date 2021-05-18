@@ -16,7 +16,6 @@ import { EventHistoryComponent } from './Components/event-history/event-history.
 import { DemoMaterialModule } from '../Common/material.module';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import { AddVendorComponent } from './Components/add-vendor/add-vendor.component';
 import { AddComplaintReportComponent } from './Components/add-complaint-report/add-complaint-report.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

@@ -1,1 +1,25 @@
-<p>payment-details works!</p>
+<div class="container-fluid py-4" >
+    <div class="card">
+        <div class="card-body">
+           <h3 class="text-secondary">PAYMENT</h3> 
+        </div>
+    </div>
+    <br>
+
+    <div class="card">
+        <div class="card-body">   
+            <div class="row">
+                <div class="col-lg-6">
+                    <button (click)="pay()" class="btn btn-primary">Pay</button>
+                </div>
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-primary" (click) ="cash()">
+                        <i class="fa fa-rocket"></i> Cash
+                   </button>
+                </div>
+            </div>      
+        </div>
+    </div>
+
+
+

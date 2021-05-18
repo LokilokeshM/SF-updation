@@ -1,1 +1,35 @@
-<p>complain-request works!</p>
+<h3 class="text-secondary">Give your honest opinion of what you think</h3>
+<br/>
+<div class="card">
+<div class="card-body">
+  <div class="row">
+  <div class="col-sm-4 form-group ">
+    <label>Subject </label><br>
+    <select name="work" class="form-control"><br/>
+      <option value="Electrical">Electrical</option>
+      <option value="Plumbing">Plumbing</option>
+      <option value="Gardener">Gardener</option>    
+      <option value="Cleaning">Cleaning</option>
+    </select>
+    </div>
+    <div class="col-sm-4 form-group ">
+    <label>Compaint Message </label>
+    <textarea id="form7" class="md-textarea form-control "  rows="3" placeholder="Complaint Message"></textarea>    
+  </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-4 form-group ">
+        <label >Duration of Days</label>
+        <input type= "text" class="form-control " placeholder="Duration of Days">
+        </div>
+        <div class="col-sm-4 form-group ">
+        <label>Others </label>
+        <input type="text" class="form-control " placeholder="Others">
+        </div>
+      </div>
+    </div><br/>
+    <div class="text-center " >
+      <button (click)="txtMethod($event)" class="btn bg-gradient-info ">FILE COMPLAINT</button>
+    </div>
+  </div>
+  

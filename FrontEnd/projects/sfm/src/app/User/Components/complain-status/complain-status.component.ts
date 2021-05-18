@@ -5,11 +5,18 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './complain-status.component.html',
   styleUrls: ['./complain-status.component.css']
 })
-export class ComplainStatusComponent implements OnInit {
+export class ComplainStatusComponent  {
+  sub: string="Electrical";
+  msg:string="Power supply is not in proper condition";
+  days:any="05";
+  others:any;
 
-  constructor() { }
-
+  constructor(){
+   
+}
   ngOnInit(): void {
+   // throw new Error('Oops!! An Error Occured!');
   }
 
+   
 }

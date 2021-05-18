@@ -1,1 +1,144 @@
-<p>view-profile works!</p>
+<div class="container-fluid py-4" >
+    <div class="card" style="width: 100%;">
+      <div class="card-body" style="align-items: right;color: darkgray;">
+          PROFILE
+          <br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2nNUXQ8TRIbctxR4bGhWkQd5mrIeu1okIyte3_rz0HSVf6hctJAXHOwrUidaXMlOtCFA&usqp=CAU" align=”right” alt="Profile Picture">
+          <br><i class="fa fa-edit" style="font-size:24px;color:rgb(62, 26, 97)"></i>
+      </div>
+  </div>
+  <br>
+  
+  
+  <form>
+    <div class="card" style="width: 100%;">
+      <div class="card-body" style="align-items: right;color: darkgray;">
+          <div class="row">
+           <div class="col-sm-4 form-group">
+            <h5>First Name</h5>
+           </div>
+           <div class="col-sm-1 form-group">
+            <label class="control-label">:</label></div>
+            <div class="col-sm-3 form-group">
+        
+            <input class="form-control" placeholder="First Name"  required="required" type="text" value="{{customer.firstname}}" ng-pattern="/^[a-zA-Z]+$/"/> 
+            </div>
+        
+            </div>
+                <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Last Name</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" placeholder="Last Name" required="required" type="text" value="{{customer.lastname}}" ng-pattern="/^[a-zA-Z]+$/"/> 
+        </div>
+    </div>
+   <!--<div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Gender</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" placeholder="Gender" required="required" type="text" value="" ng-pattern="/^[a-zA-Z]+$/" readonly/> 
+        </div>
+    </div>--> 
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Date Of Birth</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" placeholder="D.O.B" required="required" type="text" value="{{customer.dob}}" ng-pattern="/^[a-zA-Z]+$/" readonly/> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Email</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" placeholder="Email id" required="required" type="text" value="{{customer.email}}" ng-pattern="/^[a-zA-Z]+$/"/> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Mobile Number</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" placeholder="Mobile No" required="required" type="text" value="{{customer.phonenumber}}" ng-pattern="/^[a-zA-Z]+$/"/> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Nationality</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" placeholder="Nationality" required="required" type="text" value="{{customer.nationality}}" ng-pattern="/^[a-zA-Z]+$/" readonly/> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Religion</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" placeholder="Religion" required="required" type="text" value="{{customer.religion}}" ng-pattern="/^[a-zA-Z]+$/" readonly/> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Blood Group</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <input class="form-control" placeholder="Blood Group" required="required" type="text" value="{{customer.bloodGroup}}" ng-pattern="/^[a-zA-Z]+$/" readonly/> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>Old Address</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <textarea class="form-control"  placeholder="Old Address" required="required"  value="{{customer.oldAddress[0].doorno+customer.oldAddress[0].streetName+customer.oldAddress[0].city+customer.oldAddress[0].state+customer.oldAddress[0].country+customer.oldAddress[0].pincode}}" ng-pattern="/^[a-zA-Z]+$/" readonly > 
+            </textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <h5>New Address</h5>
+        </div>
+        <div class="col-sm-1 form-group">
+            <label class="control-label">:</label>
+        </div>
+        <div class="col-sm-3 form-group">
+            <textarea class="form-control"  placeholder="New Address" required="required"  value="{{customer.houseid[0].blockNo+customer.houseid[0].houseNo+customer.houseid[0].city+customer.houseid[0].state+customer.houseid[0].country+customer.houseid[0].pincode}}" ng-pattern="/^[a-zA-Z]+$/" readonly > 
+            </textarea>
+        </div>
+          </div><br>
+         <div class="center">
+           <button class="btn btn-success"  align="center">Update </button>
+          </div>
+           </div>
+        </div> 
+</form>

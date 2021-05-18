@@ -8,7 +8,6 @@ import { ComplainRequestComponent } from './Components/complain-request/complain
 import { ComplainStatusComponent } from './Components/complain-status/complain-status.component';
 import { ViewProfileComponent } from './Components/view-profile/view-profile.component';
 import { ViewEventComponent } from './Components/view-event/view-event.component';
-import { PaymentDetailsComponent } from './Components/payment-details/payment-details.component';
 import { DemoMaterialModule } from '../Common/material.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     ComplainStatusComponent,
     ViewProfileComponent,
     ViewEventComponent,
-    PaymentDetailsComponent
   ],
   imports: [
     CommonModule,

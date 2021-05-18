@@ -1,6 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { map } from 'jquery';
+
 import Swal from 'sweetalert2';
 import { Complaint } from '../../../Common/Model/complaint';
 import { Customer } from '../../../Common/Model/customer';

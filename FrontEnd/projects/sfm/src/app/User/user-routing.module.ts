@@ -4,10 +4,9 @@ import { ComplainRequestComponent } from './Components/complain-request/complain
 import { ComplainStatusComponent } from './Components/complain-status/complain-status.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { DefaultLayoutComponent } from './Components/default-layout/default-layout.component';
-import { PaymentDetailsComponent } from './Components/payment-details/payment-details.component';
 import { ViewEventComponent } from './Components/view-event/view-event.component';
 import { ViewProfileComponent } from './Components/view-profile/view-profile.component';
-
+import {PaymentDetailsComponent} from './Components/payment-details/payment-details.component'
 const routes: Routes = [
  {
   path: '',

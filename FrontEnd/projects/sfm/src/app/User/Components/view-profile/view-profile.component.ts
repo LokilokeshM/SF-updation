@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
+import { CustomerService } from '../../../Admin/Service/customer.service';
 
 @Component({
   selector: 'app-view-profile',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProfileComponent implements OnInit {
 
-  constructor() { }
+  customer:any;
+  constructor(private cService:CustomerService) { }
 
   ngOnInit(): void {
+
+    this.cService.getCustomer(1).subscribe((data)=>
+    {
+      this.customer = data;
+    },
+    (error)=>{Swal.fire(error,"","error")})
   }
 
 }

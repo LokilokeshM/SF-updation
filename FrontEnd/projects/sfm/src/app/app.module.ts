@@ -9,7 +9,6 @@ import { LogoutComponent } from './Common/Components/logout/logout.component';
 import { AuthGuardService } from './guard/auth.gaurd';
 import { DemoMaterialModule } from './Common/material.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import { JwtInterceptor } from './guard/jwt.interceptor';
 
 @NgModule({
